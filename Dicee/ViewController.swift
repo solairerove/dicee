@@ -30,6 +30,10 @@ class ViewController: UIViewController {
     @IBAction func rollButtomEmitter(_ sender: UIButton) {
         updateDiceImages()
     }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        updateDiceImages()
+    }
 
     func updateDiceImages() -> Void {
         leftRandomDiceIndex = getRandomIndexInRange()
