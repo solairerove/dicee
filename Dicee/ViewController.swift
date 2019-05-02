@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     let FROM_RANGE : Int = 0
     let TO_RANGE : Int = 5
+    
+    let diceArray = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
 
     var leftRandomDiceIndex: Int = 0
     var rightRandomDiceIndex: Int = 0
@@ -29,6 +31,9 @@ class ViewController: UIViewController {
         rightRandomDiceIndex = getRandomIndexInRange()
         
         print(leftRandomDiceIndex, rightRandomDiceIndex)
+        
+        leftDiceImageView.image = UIImage(named: "dice\(leftRandomDiceIndex + 1)")
+        rightDiceImageView.image = UIImage(named: diceArray[rightRandomDiceIndex])
     }
 
     func getRandomIndex(rangeFrom: Int, rangeTo: Int) -> Int {
